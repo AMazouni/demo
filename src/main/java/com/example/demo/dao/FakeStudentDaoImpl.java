@@ -7,9 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import org.springframework.stereotype.Repository;
+
 import com.example.demo.model.Student;
 
-
+@Repository("FakeDao")
 public class FakeStudentDaoImpl implements StudentDao {
 
 	private final Map<UUID, Student> database;
