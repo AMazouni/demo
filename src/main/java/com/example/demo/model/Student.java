@@ -2,6 +2,8 @@ package com.example.demo.model;
 
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Student {
 
 	private final UUID id;
@@ -10,13 +12,14 @@ public class Student {
   	private final String LastName;
   	private final String course; 
   	
-	public Student(UUID id,
-			       Integer age,
-			       String firstName,
-			       String lastName,
-			       String course) {
+	public Student(
+			       
+			       @JsonProperty("age") Integer age,
+			       @JsonProperty("firstName") String firstName,
+			       @JsonProperty("lastName") String lastName,
+			       @JsonProperty("course") String course) {
 		super();
-		this.id = id;
+		this.id = UUID.randomUUID();
 		this.age = age;
 		this.firstName = firstName;
 		LastName = lastName;

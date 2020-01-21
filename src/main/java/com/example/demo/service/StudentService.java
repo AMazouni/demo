@@ -24,7 +24,7 @@ public class StudentService {
 	}
 
 	public int persistNewStudent(Student student) {
-		UUID studentId= UUID.randomUUID();
+		UUID studentId= student.getId();
 		return studentDao.insertNewStudent(studentId, student) ;
 		
 	}
